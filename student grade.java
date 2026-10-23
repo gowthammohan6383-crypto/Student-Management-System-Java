@@ -1,23 +1,36 @@
 import java.util.Scanner;
+public class SGPAandCGPACalculation{
+	public static void main(String[] args){
+		Scanner sc=new Scanner(System.in);
+		System.out.print("ENter number of Subjects:");
+		int n=sc.nextInt();
+		double totalCredits=0,totalPoints=0;
+		for(int i=1;i<=n;i++){
+			System.out.println("Subject"+i);
+			System.out.print("Enter the Credit:");
+			int credit=sc.nextInt();
+			System.out.print("Enter the Grade Point:");
+			int grade =sc.nextInt();
+			totalCredits+=credit;
+			totalPoints+=credit*grade;
+		}
+		
+		double sgpa=totalPoints/totalCredits;
+		System.out.println("SGPA="+sgpa);
+	
 
-class Main {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
+		System.out.println("Enter Number of Semester:");
+		int sem=sc.nextInt();
+		double totalSGPA=0;
+		for(int i=1;i<=sem;i++){
+			System.out.print("Enter SGPA of semester"+i+":");
+			totalSGPA+=sc.nextDouble();
+		}
+		
 
-        System.out.print("Enter student mark: ");
-        int mark = sc.nextInt();
+		double cgpa=totalSGPA/sem;
+		System.out.println("CGPA="+cgpa);
 
-        if (mark >= 90)
-            System.out.println("Grade A");
-        else if (mark >= 80)
-            System.out.println("Grade B");
-        else if (mark >= 70)
-            System.out.println("Grade C");
-        else if (mark >= 50)
-            System.out.println("Grade D");
-        else
-            System.out.println("Grade F");
-
-        sc.close();
-    }
+		sc.close();
+	}
 }
